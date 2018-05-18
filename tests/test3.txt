@@ -1,0 +1,28 @@
+.data.1
+a DEF 6
+b DEF 0x20
+.global lab1,lab6,lab9
+lab1:
+DW b-a
+lab2: 
+c DEF 0b11
+lab3: DB (b-a-24)*3 DUP lab1 + 3
+.text.1
+LOADUB R1, R2
+LOADSB R0, [R4]
+LOADUW R5, #200
+lab4: LOADSW R5, [R3 + ( lab2 - lab1 ) * 2 ]
+STOREB R4, 0x500
+STOREW R8, lab2-lab1
+lab5: STORE R7, $lab2
+ADD R3, R4, R5
+PUSH R2
+MUL R1,R2,R3
+DIV R1,R2,R3
+MOD R4, R5, R6
+lab7: POP R12
+.data.2
+d DEF 10
+DW lab9 ;lab9 je externi simbol
+lab8: DD -4, ?, ?
+.end

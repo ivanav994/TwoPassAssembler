@@ -1,0 +1,40 @@
+#TabelaSimbola
+SEG 0 UND 0 0x0 0x0 L
+SEG 1 data.1 1 0x0 0x5 LRW
+SYM 2 a -1 0x7 L
+SYM 3 b -1 0x20 L
+SYM 4 lab1 1 0x0 G
+SYM 5 lab2 1 0x2 L
+SYM 6 c -1 0x3 L
+SYM 7 lab3 1 0x2 L
+SEG 8 text.1 8 0x0 0x18 LRX
+SYM 9 lab4 8 0xC L
+SEG 10 data 10 0x100 0xE LRW
+SYM 11 d -1 0xA L
+SYM 12 lab5 10 0x102 L
+SEG 13 bss 13 0x0 0x4 LRW
+
+
+
+#rel.data.1
+0x2 A 4
+0x3 A 4
+0x4 A 4
+data.1
+19 00 03 03 03 
+
+#rel.text.1
+text.1
+00 0A 00 00 01 00 00 00 30 03 21 40 37 01 33 80
+3A 02 19 00 03 06 00 00 
+
+#rel.data
+0x102 A 4
+data
+04 01 F7 FF FF FF FE FF FF FF 00 00 00 00 
+
+#rel.bss
+bss
+
+
+#end

@@ -1,0 +1,27 @@
+.text.1
+.global lab2,lab9
+JMP $lab2
+lab1: PUSH R2
+lab2: POP R3
+INT R2
+JGEZ R5, $lab3
+ORG 0x70
+.text.2
+.global lab4
+lab3: CALL lab1+7
+JZ R6, $lab1
+lab4: LOAD R3, $(lab2 + 0b111)
+JMP 0x2+ 0b11 - 4+ lab2+lab3-lab1
+RET
+.data.1
+k DEF 2
+lab5:
+DD lab4 - lab3 + lab2 - 0b01 + k*2
+DB lab4-lab3 DUP 0b011
+.data.2
+a DEF 1
+DB ?, ?, ?, 3*1-9, (a+2)/3
+.end
+
+
+

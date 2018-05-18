@@ -1,0 +1,24 @@
+.data.1
+.global lab1, lab6
+a DEF 4
+b DEF a-3
+lab1: DD -8
+lab2:
+c DEF 0x9
+DW (c-a)*2
+ORG lab2-lab1 +100
+.text.1
+PUSH R5
+JGZ R1, R7
+JZ R2, [R9]
+JLEZ R3, [R4+ lab2-lab1+0x5]
+JNZ SP, [R2+ 0b010]
+lab3: POP R8
+.data.2
+DD 10 DUP 1234
+DB lab3 -11
+.text.2
+JMP lab1
+JMP [R5+0x9]
+JMP lab2+6-0b01
+.end
